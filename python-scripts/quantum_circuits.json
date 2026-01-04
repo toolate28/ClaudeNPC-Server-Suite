@@ -1,0 +1,2782 @@
+{
+  "version": "0.1.0",
+  "author": "Hope&&Sauced Collaborative",
+  "description": "Quantum Redstone Circuit Definitions",
+  "circuits": [
+    {
+      "name": "state_preparation",
+      "description": "Prepares basis states |0\u27e9 or |1\u27e9",
+      "dimensions": {
+        "x": 10,
+        "y": 3,
+        "z": 3
+      },
+      "block_count": 16,
+      "blocks": [
+        {
+          "pos": [
+            0,
+            1,
+            1
+          ],
+          "block": "minecraft:lever",
+          "properties": {
+            "face": "floor",
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            1,
+            0,
+            1
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            0,
+            1
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            0,
+            1
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            0,
+            1
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            0,
+            1
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            0,
+            1
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            0,
+            0
+          ],
+          "block": "minecraft:stone"
+        },
+        {
+          "pos": [
+            1,
+            1,
+            0
+          ],
+          "block": "minecraft:redstone_torch",
+          "properties": {
+            "facing": "up"
+          }
+        },
+        {
+          "pos": [
+            2,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            7,
+            0,
+            1
+          ],
+          "block": "minecraft:green_stained_glass"
+        },
+        {
+          "pos": [
+            7,
+            0,
+            0
+          ],
+          "block": "minecraft:blue_stained_glass"
+        }
+      ]
+    },
+    {
+      "name": "pauli_x_gate",
+      "description": "Pauli-X (NOT) gate - swaps ALPHA and OMEGA",
+      "dimensions": {
+        "x": 10,
+        "y": 4,
+        "z": 5
+      },
+      "block_count": 24,
+      "blocks": [
+        {
+          "pos": [
+            0,
+            2,
+            4
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            2,
+            4
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            2,
+            4
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            2,
+            4
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            2,
+            4
+          ],
+          "block": "minecraft:stone"
+        },
+        {
+          "pos": [
+            4,
+            1,
+            4
+          ],
+          "block": "minecraft:redstone_torch",
+          "properties": {
+            "facing": "down"
+          }
+        },
+        {
+          "pos": [
+            4,
+            1,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            1,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            0,
+            0
+          ],
+          "block": "minecraft:stone"
+        },
+        {
+          "pos": [
+            4,
+            1,
+            0
+          ],
+          "block": "minecraft:redstone_torch",
+          "properties": {
+            "facing": "up"
+          }
+        },
+        {
+          "pos": [
+            5,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            7,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            8,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            9,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            2,
+            4
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            2,
+            4
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            7,
+            2,
+            4
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            8,
+            2,
+            4
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            9,
+            2,
+            4
+          ],
+          "block": "minecraft:redstone_wire"
+        }
+      ]
+    },
+    {
+      "name": "pauli_z_gate",
+      "description": "Pauli-Z (phase flip) gate - toggles PHASE rail",
+      "dimensions": {
+        "x": 10,
+        "y": 3,
+        "z": 3
+      },
+      "block_count": 31,
+      "blocks": [
+        {
+          "pos": [
+            0,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            7,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            8,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            9,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            0,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            1,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "west",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            2,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            3,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "west",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            4,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            5,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "west",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            6,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            7,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "west",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            8,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            9,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "west",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            0,
+            0
+          ],
+          "block": "minecraft:stone"
+        },
+        {
+          "pos": [
+            3,
+            1,
+            0
+          ],
+          "block": "minecraft:redstone_torch"
+        },
+        {
+          "pos": [
+            4,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            7,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            8,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            9,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        }
+      ]
+    },
+    {
+      "name": "hadamard_gate",
+      "description": "Hadamard gate - creates superposition, includes measurement",
+      "dimensions": {
+        "x": 15,
+        "y": 5,
+        "z": 10
+      },
+      "block_count": 12,
+      "blocks": [
+        {
+          "pos": [
+            5,
+            0,
+            3
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 32
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            6,
+            0,
+            3
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            9,
+            0,
+            3
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 28
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            8,
+            0,
+            3
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "west",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            7,
+            2,
+            3
+          ],
+          "block": "minecraft:stone"
+        },
+        {
+          "pos": [
+            7,
+            1,
+            3
+          ],
+          "block": "minecraft:dropper",
+          "properties": {
+            "facing": "down"
+          },
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 4,
+                "id": "minecraft:diamond",
+                "Count": 1
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            7,
+            2,
+            4
+          ],
+          "block": "minecraft:stone"
+        },
+        {
+          "pos": [
+            7,
+            2,
+            3
+          ],
+          "block": "minecraft:stone_button",
+          "properties": {
+            "face": "wall",
+            "facing": "south"
+          }
+        },
+        {
+          "pos": [
+            6,
+            0,
+            3
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "down"
+          }
+        },
+        {
+          "pos": [
+            8,
+            0,
+            3
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "down"
+          }
+        },
+        {
+          "pos": [
+            6,
+            0,
+            2
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            8,
+            0,
+            2
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        }
+      ]
+    },
+    {
+      "name": "cnot_gate",
+      "description": "CNOT gate - entangles two qubits",
+      "dimensions": {
+        "x": 20,
+        "y": 6,
+        "z": 15
+      },
+      "block_count": 83,
+      "blocks": [
+        {
+          "pos": [
+            0,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            0,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            7,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            7,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            8,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            8,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            9,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            9,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            10,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            10,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            11,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            11,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            12,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            12,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            13,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            13,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            14,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            14,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            15,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            15,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            16,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            16,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            17,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            17,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            18,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            18,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            19,
+            4,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            19,
+            4,
+            13
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            10,
+            4,
+            12
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            10,
+            4,
+            11
+          ],
+          "block": "minecraft:stone"
+        },
+        {
+          "pos": [
+            10,
+            4,
+            10
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            0,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            3,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            5,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            6,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            7,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            7,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            8,
+            0,
+            7
+          ],
+          "block": "minecraft:sticky_piston",
+          "properties": {
+            "facing": "south"
+          }
+        },
+        {
+          "pos": [
+            8,
+            0,
+            0
+          ],
+          "block": "minecraft:sticky_piston",
+          "properties": {
+            "facing": "north"
+          }
+        },
+        {
+          "pos": [
+            10,
+            3,
+            10
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            10,
+            2,
+            10
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            10,
+            1,
+            10
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            10,
+            0,
+            10
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            9,
+            0,
+            10
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            8,
+            0,
+            10
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            12,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            12,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            13,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            13,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            14,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            14,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            15,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            15,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            16,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            16,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            17,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            17,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            18,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            18,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            19,
+            0,
+            7
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            19,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        }
+      ]
+    },
+    {
+      "name": "phase_evolution_engine",
+      "description": "16-step phase evolution with cos\u00b2/sin\u00b2 lookup",
+      "dimensions": {
+        "x": 60,
+        "y": 4,
+        "z": 20
+      },
+      "block_count": 102,
+      "blocks": [
+        {
+          "pos": [
+            10,
+            0,
+            10
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            10,
+            0,
+            11
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            12,
+            0,
+            10
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            12,
+            0,
+            11
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            14,
+            0,
+            10
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            14,
+            0,
+            11
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            10
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            11
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            12
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            13
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            14
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            15
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            16
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            17
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            18
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            16,
+            0,
+            19
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            14,
+            0,
+            18
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            14,
+            0,
+            19
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            12,
+            0,
+            18
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            12,
+            0,
+            19
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            10,
+            0,
+            18
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            10,
+            0,
+            19
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            10,
+            0,
+            16
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            10,
+            0,
+            17
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            10,
+            0,
+            14
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            10,
+            0,
+            15
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            10,
+            0,
+            12
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            10,
+            0,
+            13
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            12,
+            0,
+            14
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            12,
+            0,
+            15
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            14,
+            0,
+            14
+          ],
+          "block": "minecraft:hopper",
+          "properties": {
+            "facing": "east"
+          }
+        },
+        {
+          "pos": [
+            14,
+            0,
+            15
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "south",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            20,
+            0,
+            10
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 60
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            21,
+            0,
+            10
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            22,
+            0,
+            10
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 52
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            23,
+            0,
+            10
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            24,
+            0,
+            10
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 32
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            25,
+            0,
+            10
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            26,
+            0,
+            10
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 8
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            27,
+            0,
+            10
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            28,
+            0,
+            10
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": []
+          }
+        },
+        {
+          "pos": [
+            29,
+            0,
+            10
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            30,
+            0,
+            10
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 8
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            31,
+            0,
+            10
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            32,
+            0,
+            10
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 28
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            33,
+            0,
+            10
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            34,
+            0,
+            10
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 52
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            35,
+            0,
+            10
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            20,
+            0,
+            14
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 60
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            21,
+            0,
+            14
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            22,
+            0,
+            14
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 52
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            23,
+            0,
+            14
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            24,
+            0,
+            14
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 32
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            25,
+            0,
+            14
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            26,
+            0,
+            14
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 8
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            27,
+            0,
+            14
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            28,
+            0,
+            14
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": []
+          }
+        },
+        {
+          "pos": [
+            29,
+            0,
+            14
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            30,
+            0,
+            14
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 8
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            31,
+            0,
+            14
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            32,
+            0,
+            14
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 28
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            33,
+            0,
+            14
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            34,
+            0,
+            14
+          ],
+          "block": "minecraft:chest",
+          "nbt": {
+            "Items": [
+              {
+                "Slot": 0,
+                "id": "minecraft:cobblestone",
+                "Count": 52
+              }
+            ]
+          }
+        },
+        {
+          "pos": [
+            35,
+            0,
+            14
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            36,
+            0,
+            12
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            37,
+            0,
+            12
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            38,
+            0,
+            12
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            39,
+            0,
+            12
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            36,
+            0,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            37,
+            0,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            38,
+            0,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            39,
+            0,
+            14
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            40,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            40,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            41,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            41,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            42,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            42,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            43,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            43,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            44,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            44,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            45,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            45,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            46,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            46,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            47,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            47,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            48,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            48,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            49,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            49,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            50,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            50,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            51,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            51,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            52,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            52,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            53,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            53,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            54,
+            1,
+            12
+          ],
+          "block": "minecraft:redstone_lamp"
+        },
+        {
+          "pos": [
+            54,
+            1,
+            14
+          ],
+          "block": "minecraft:redstone_lamp"
+        }
+      ]
+    },
+    {
+      "name": "conservation_verifier",
+      "description": "Verifies ALPHA + OMEGA = 15 constraint",
+      "dimensions": {
+        "x": 10,
+        "y": 3,
+        "z": 5
+      },
+      "block_count": 14,
+      "blocks": [
+        {
+          "pos": [
+            0,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            1,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            0,
+            4
+          ],
+          "block": "minecraft:redstone_block"
+        },
+        {
+          "pos": [
+            2,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "subtract"
+          }
+        },
+        {
+          "pos": [
+            2,
+            0,
+            0
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            2,
+            0,
+            2
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            4,
+            0,
+            1
+          ],
+          "block": "minecraft:comparator",
+          "properties": {
+            "facing": "east",
+            "mode": "compare"
+          }
+        },
+        {
+          "pos": [
+            6,
+            0,
+            1
+          ],
+          "block": "minecraft:stone"
+        },
+        {
+          "pos": [
+            6,
+            1,
+            1
+          ],
+          "block": "minecraft:redstone_torch"
+        },
+        {
+          "pos": [
+            7,
+            0,
+            1
+          ],
+          "block": "minecraft:redstone_wire"
+        },
+        {
+          "pos": [
+            8,
+            0,
+            1
+          ],
+          "block": "minecraft:lime_stained_glass"
+        },
+        {
+          "pos": [
+            8,
+            1,
+            1
+          ],
+          "block": "minecraft:redstone_lamp"
+        }
+      ]
+    }
+  ]
+}
