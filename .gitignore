@@ -1,0 +1,46 @@
+# Java
+*.class
+*.jar
+!ClaudeNPC/target/ClaudeNPC.jar
+target/
+dependency-reduced-pom.xml
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+test-logs/
+
+# Minecraft server files (if testing locally)
+server/
+world/
+world_nether/
+world_the_end/
+plugins/
+*.jar.old
+
+# Secrets
+config.local.yml
+*.secret
+.env.local
+
+# PowerShell
+*.ps1.bak

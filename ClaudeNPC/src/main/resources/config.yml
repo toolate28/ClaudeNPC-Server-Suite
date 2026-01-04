@@ -1,0 +1,53 @@
+# ClaudeNPC Configuration
+# Version: 1.0.0
+
+# Claude API Configuration
+claude:
+  # Your Claude API key from https://console.anthropic.com/
+  # REQUIRED: Plugin will not work without this
+  api-key: ""
+
+  # Claude model to use
+  # Options: claude-3-5-sonnet-20241022, claude-3-5-haiku-20241022, claude-opus-4-5-20251101
+  model: "claude-3-5-haiku-20241022"
+
+  # Maximum tokens for response
+  max-tokens: 1024
+
+  # API request timeout (seconds)
+  timeout: 30
+
+# NPC Behavior Settings
+npc:
+  # How many messages to remember per player
+  memory-size: 5
+
+  # How long to keep conversation in memory (minutes)
+  # Set to 0 to keep forever (until server restart)
+  memory-timeout: 30
+
+  # Default NPC personality (can be overridden per-NPC)
+  default-personality: |
+    You are a helpful NPC in a Minecraft server.
+    Keep responses concise (1-3 sentences).
+    Be friendly and helpful.
+    You can provide information about the server, help with quests, or just chat.
+
+# Performance Settings
+performance:
+  # Enable async API calls (recommended)
+  async-calls: true
+
+  # Rate limit: max API calls per minute
+  rate-limit: 60
+
+  # Cache responses for identical questions (minutes, 0 to disable)
+  cache-duration: 5
+
+# Debug Settings
+debug:
+  # Enable verbose logging
+  enabled: false
+
+  # Log API requests/responses
+  log-api-calls: false

@@ -1,0 +1,29 @@
+name: ClaudeNPC
+version: 1.0.0
+main: com.claudenpc.ClaudeNPC
+api-version: '1.21'
+description: AI-powered NPCs using Claude API
+author: KENL
+website: https://github.com/toolate28/kenl
+
+depend:
+  - Citizens
+
+softdepend:
+  - Vault
+  - LuckPerms
+
+commands:
+  claudenpc:
+    description: ClaudeNPC main command
+    usage: /claudenpc <reload|status>
+    permission: claudenpc.admin
+    permission-message: You don't have permission to use this command
+
+permissions:
+  claudenpc.admin:
+    description: Access to ClaudeNPC admin commands
+    default: op
+  claudenpc.talk:
+    description: Ability to talk to Claude NPCs
+    default: true
