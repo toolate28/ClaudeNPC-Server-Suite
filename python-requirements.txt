@@ -9,13 +9,10 @@ scipy>=1.11.0          # Scientific algorithms, optimization
 sympy>=1.12            # Symbolic mathematics
 
 # ============================================================================
-# MACHINE LEARNING & AI
+# MACHINE LEARNING & AI (moved to optional extras)
 # ============================================================================
-torch>=2.1.0           # PyTorch - neural networks, tensor operations
-torchvision>=0.16.0    # Computer vision models
-transformers>=4.36.0   # Hugging Face transformers (language models)
-scikit-learn>=1.3.0    # Classical ML algorithms
-pandas>=2.1.0          # Data manipulation
+# Optional heavy ML packages (see python-requirements-ml.txt)
+# pip install -r python-requirements-ml.txt
 
 # ============================================================================
 # VISUALIZATION
@@ -39,10 +36,10 @@ mcschematic>=1.0.0     # Schematic file handling
 quarry>=1.4.0          # Minecraft protocol library
 
 # ============================================================================
-# QUANTUM COMPUTING (For Redstone circuits)
+# QUANTUM COMPUTING (moved to optional extras)
 # ============================================================================
-qiskit>=0.45.0         # IBM quantum computing framework
-cirq>=1.3.0            # Google quantum circuits
+# Optional quantum packages (see python-requirements-ml.txt)
+# pip install -r python-requirements-ml.txt
 
 # ============================================================================
 # CODE GENERATION & AST
@@ -63,7 +60,8 @@ tqdm>=4.66.0           # Progress bars
 # ============================================================================
 # ASYNC & CONCURRENCY
 # ============================================================================
-asyncio>=3.4.3         # Async I/O
+# `asyncio` is part of the Python standard library; do not pin as an external package.
+# If you need helpers, list them explicitly (e.g., aiofiles).
 aiofiles>=23.2.0       # Async file operations
 
 # ============================================================================
@@ -72,7 +70,7 @@ aiofiles>=23.2.0       # Async file operations
 networkx>=3.2.0        # Graph algorithms (for circuit optimization)
 noise>=1.2.2           # Perlin noise (for terrain generation)
 opensimplex>=0.4.5     # Simplex noise
-noise>=1.2.2           # Various noise functions
+# (duplicate "noise" entry removed)
 
 # ============================================================================
 # OPTIMIZATION

@@ -1,0 +1,21 @@
+# Optional ML & Quantum extras for ClaudeNPC
+# Install only if you need model training / heavy inference or quantum toolchains.
+# Example: pip install -r python-requirements-ml.txt
+
+# MACHINE LEARNING
+torch>=2.1.0           # PyTorch - neural networks, tensor operations
+torchvision>=0.16.0    # Computer vision models
+transformers>=4.36.0   # Hugging Face transformers (language models)
+scikit-learn>=1.3.0    # Classical ML algorithms
+pandas>=2.1.0          # Data manipulation
+
+# QUANTUM COMPUTING
+qiskit>=0.45.0         # IBM quantum computing framework
+cirq>=1.3.0            # Google quantum circuits
+
+# Optional heavy visualization / CV
+opencv-python>=4.8.0
+scikit-image>=0.22.0
+
+# Note: Installing these packages may require build tools and/or GPUs.
+# For reproducible installations, prefer using pinned wheels or an environment manager (conda/pipx/pip-tools).
