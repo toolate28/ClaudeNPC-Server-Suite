@@ -1,7 +1,7 @@
 # 🎮 ClaudeNPC Server Suite - Modular Setup Framework
 
-**Version:** v2.0.0 Enhanced Edition
-**Last Updated:** December 11, 2024
+**Version:** v2.1.0 SpiralSafe Edition
+**Last Updated:** January 8, 2026
 **Status:** Production Ready
 
 **Production-ready, modular installation framework for PaperMC + AI-powered NPCs**
@@ -569,11 +569,59 @@ $result | Format-List
 
 ---
 
+## 🌀 SpiralSafe API Integration
+
+ClaudeNPC v2.1.0 integrates with the SpiralSafe coherence engine for enhanced AI orchestration.
+
+### API Endpoints
+
+| Endpoint | Purpose | Use Case |
+|----------|---------|----------|
+| `/api/wave` | Coherence detection | Analyze NPC dialogue for quality |
+| `/api/bump` | Handoff routing | Transfer conversations between NPCs |
+| `/api/awi` | Permission scaffolding | Grant Claude API access with intent |
+| `/api/atom` | Task orchestration | Track NPC behavior atoms |
+| `/api/context` | Knowledge units | Store/retrieve NPC personalities |
+| `/api/health` | System status | Monitor API health |
+
+### Configuration
+
+Add to your `claudenpc.yml`:
+
+```yaml
+spiralsafe:
+  api_base: "https://api.spiralsafe.org"
+  enabled: true
+  wave:
+    auto_analyze: true
+    curl_threshold: 0.3
+    divergence_threshold: 0.4
+  awi:
+    default_level: 2
+    require_intent: true
+```
+
+### PowerShell Integration
+
+```powershell
+# Add to $PROFILE for CLI access
+$env:SPIRALSAFE_API_BASE = "https://api.spiralsafe.org"
+Import-Module "$env:USERPROFILE\Repos\spiralsafe-ops\scripts\SpiralSafe.psm1"
+
+# Quick commands
+ss-status           # Check API health
+ss-wave <file>      # Analyze document coherence
+ss-bump create      # Create handoff marker
+```
+
+---
+
 ## 📚 Additional Resources
 
-- **Module Documentation:** See `docs/MODULES.md` (create this)
-- **Phase Development:** See `docs/PHASES.md` (create this)
-- **API Reference:** See `docs/API.md` (create this)
+- **Module Documentation:** See `docs/MODULES.md`
+- **Phase Development:** See `docs/PHASES.md`
+- **API Reference:** See `docs/API.md`
+- **SpiralSafe Docs:** See [spiralsafe-ops/README.md](../spiralsafe-ops/README.md)
 
 ---
 
@@ -604,10 +652,10 @@ $result | Format-List
 
 | Module | Status | Documentation | Tests |
 |--------|--------|---------------|-------|
-| Display.ps1 | ✅ Complete | ✅ Yes | ⏳ Pending |
-| Logger.ps1 | ✅ Complete | ✅ Yes | ⏳ Pending |
-| Safety.ps1 | ✅ Complete | ✅ Yes | ⏳ Pending |
-| Config.ps1 | ✅ Complete | ✅ Yes | ⏳ Pending |
+| Display.psm1 | ✅ Complete | ✅ Yes | ✅ Passing |
+| Logger.psm1 | ✅ Complete | ✅ Yes | ✅ Passing |
+| Safety.psm1 | ✅ Complete | ✅ Yes | ✅ Passing |
+| Config.psm1 | ✅ Complete | ✅ Yes | ✅ Passing |
 | 01-Preflight.ps1 | ⏳ Template | ⏳ Pending | ⏳ Pending |
 | 02-Java.ps1 | ⏳ Template | ⏳ Pending | ⏳ Pending |
 | 03-PaperMC.ps1 | ⏳ Template | ⏳ Pending | ⏳ Pending |
@@ -620,19 +668,20 @@ $result | Format-List
 
 This modular framework provides:
 
-✅ **Reusable Components** - Drop modules into any project  
-✅ **Consistent UI** - Branded, professional appearance  
-✅ **Comprehensive Logging** - Track everything  
-✅ **Safety First** - Validation and backups  
-✅ **Easy Testing** - Test modules independently  
-✅ **Extensible** - Add phases and modules easily  
-✅ **Well Documented** - Clear examples and patterns  
+✅ **Reusable Components** - Drop modules into any project
+✅ **Consistent UI** - Branded, professional appearance
+✅ **Comprehensive Logging** - Track everything
+✅ **Safety First** - Validation and backups
+✅ **Easy Testing** - Test modules independently
+✅ **Extensible** - Add phases and modules easily
+✅ **Well Documented** - Clear examples and patterns
+✅ **SpiralSafe Integration** - Coherence engine for AI orchestration
 
 **Start building with:** `.\Setup.ps1`
 
-**Report issues:** Create an issue in the repository  
-**Contribute:** Follow the contributing guide above  
+**Report issues:** Create an issue in the repository
+**Contribute:** Follow the contributing guide above
 
 ---
 
-**Built with SAIF Methodology • Made for ClaudeNPC Server Suite**
+**Built with SAIF Methodology • Powered by SpiralSafe • H&&S**

@@ -62,14 +62,62 @@ function Invoke-PaperMCSetup {
             Select-Object -First 1
 
         if (-not $paperJar) {
-            Write-StatusBox -Title "PaperMC JAR" -Status "Not found in Downloads" -Type "Error"
-            return @{Success = $false; Message = "PaperMC JAR not found"; Data = @{}}
+            # Auto-download from PaperMC API
+            Write-StatusBox -Title "PaperMC" -Status "Downloading latest..." -Type "Progress"
+
+            try {
+                $mcVersion = "1.21.3"
+                Write-Host ""
+                Write-Host "  Fetching latest PaperMC build for Minecraft $mcVersion..." -ForegroundColor Cyan
+
+                # Get latest build number from PaperMC API
+                $buildsUrl = "https://api.papermc.io/v2/projects/paper/versions/$mcVersion/builds"
+                $buildsResponse = Invoke-RestMethod -Uri $buildsUrl -UseBasicParsing
+                $latestBuild = $buildsResponse.builds | Sort-Object build -Descending | Select-Object -First 1
+
+                if (-not $latestBuild) {
+                    throw "Could not find builds for MC $mcVersion"
+                }
+
+                $buildNumber = $latestBuild.build
+                $downloadName = $latestBuild.downloads.application.name
+
+                Write-Host "  Found build #$buildNumber" -ForegroundColor Green
+
+                # Download the JAR
+                $downloadUrl = "https://api.papermc.io/v2/projects/paper/versions/$mcVersion/builds/$buildNumber/downloads/$downloadName"
+                $destJarDirect = Join-Path $Config.ServerPath "paper.jar"
+
+                Write-Host "  Downloading $downloadName..." -ForegroundColor Cyan
+
+                $ProgressPreference = 'SilentlyContinue'
+                Invoke-WebRequest -Uri $downloadUrl -OutFile $destJarDirect -UseBasicParsing
+                $ProgressPreference = 'Continue'
+
+                Write-StatusBox -Title "PaperMC $mcVersion" -Status "Downloaded (build #$buildNumber)" -Type "Success"
+                Write-Log -Message "Downloaded PaperMC $mcVersion build #$buildNumber" -Level "SUCCESS"
+
+                # Skip the copy step since we downloaded directly
+                $paperJar = Get-Item $destJarDirect
+                $skipCopy = $true
+
+            } catch {
+                Write-StatusBox -Title "PaperMC Download" -Status "Failed: $_" -Type "Error"
+                Write-Host ""
+                Write-Host "  Manual download required:" -ForegroundColor Yellow
+                Write-Host "  https://papermc.io/downloads/paper" -ForegroundColor White
+                Write-Host "  Save to Downloads folder and re-run." -ForegroundColor Gray
+                Write-Host ""
+                return @{Success = $false; Message = "PaperMC download failed"; Data = @{}}
+            }
         }
 
-        # Copy JAR
+        # Copy JAR (if not already downloaded directly)
         $destJar = Join-Path $Config.ServerPath "paper.jar"
-        Copy-Item $paperJar.FullName $destJar -Force
-        Write-StatusBox -Title "PaperMC JAR" -Status "Copied" -Type "Success"
+        if (-not $skipCopy) {
+            Copy-Item $paperJar.FullName $destJar -Force
+            Write-StatusBox -Title "PaperMC JAR" -Status "Copied" -Type "Success"
+        }
 
         # Create start.bat
         Write-StatusBox -Title "Creating start.bat" -Status "Processing" -Type "Progress"

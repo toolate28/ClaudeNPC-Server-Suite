@@ -1,0 +1,93 @@
+# ClaudeNPC Server Suite - Agent Context
+# Version: 2.1.0
+# Format: SpiralSafe .context.yaml
+
+domain: claudenpc-server-suite
+version: "2.1.0"
+type: minecraft-server-framework
+
+description: |
+  Production-ready modular installation framework for PaperMC servers
+  with AI-powered NPCs using Claude API. Built with SAIF methodology.
+
+architecture:
+  pattern: modular-orchestrator
+  components:
+    orchestrator: setup/INSTALL.ps1
+    core_modules:
+      - setup/core/Display.psm1   # UI/Display functions
+      - setup/core/Logger.psm1    # Logging system
+      - setup/core/Safety.psm1    # Validation & backups
+      - setup/core/Config.psm1    # Configuration management
+    phases:
+      - setup/phases/01-Preflight.ps1   # Prerequisites check
+      - setup/phases/02-Java.ps1        # Java installation
+      - setup/phases/03-PaperMC.ps1     # Server installation
+      - setup/phases/04-Plugins.ps1     # Plugin installation
+      - setup/phases/05-Configure.ps1   # Final configuration
+    plugin:
+      path: ClaudeNPC/
+      type: java-maven
+      main_class: com.claudenpc.ClaudeNPC
+      dependencies:
+        - PaperMC API 1.21.3
+        - Citizens 2.0.36
+        - OkHttp 4.12.0
+        - Gson 2.10.1
+
+key_files:
+  entry_point: INSTALL.ps1
+  main_readme: README.md
+  test_runner: test-core-modules.ps1
+  plugin_config: ClaudeNPC/pom.xml
+
+commands:
+  install: "powershell -ExecutionPolicy Bypass -File INSTALL.ps1"
+  test: "powershell -NoProfile -ExecutionPolicy Bypass -File test-core-modules.ps1"
+  build_plugin: "cd ClaudeNPC && mvn clean package"
+
+integrations:
+  spiralsafe:
+    api_base: https://api.spiralsafe.org
+    endpoints:
+      wave: /api/wave/analyze
+      bump: /api/bump/create
+      awi: /api/awi/request
+      atom: /api/atom/create
+      context: /api/context/store
+      health: /api/health
+  claude_api:
+    purpose: NPC dialogue generation
+    requires: ANTHROPIC_API_KEY
+
+signals:
+  use_when:
+    - minecraft_server_setup
+    - ai_npc_implementation
+    - papermc_plugin_development
+    - spiralsafe_integration
+  avoid_when:
+    - bedrock_edition
+    - vanilla_server_only
+    - non_windows_primary
+
+invariants:
+  - PowerShell 5.1+ required
+  - Java 21+ required for plugin
+  - Windows environment assumed
+  - Administrator privileges needed for INSTALL.ps1
+
+relationships:
+  depends_on:
+    - spiralsafe-ops
+    - Citizens plugin
+    - PaperMC server
+  consumed_by:
+    - minecraft_players
+    - server_administrators
+
+meta:
+  source: Hope&&Sauced
+  methodology: SAIF
+  confidence: high
+  last_updated: "2026-01-08"

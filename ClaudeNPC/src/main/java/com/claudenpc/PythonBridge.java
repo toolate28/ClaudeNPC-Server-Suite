@@ -206,19 +206,19 @@ public class PythonBridge {
         int placedCount = 0;
 
         for (Object obj : blocks) {
-            JSONObject blockData = (JSONObject) obj;
+            JSONObject jsonBlockData = (JSONObject) obj;
 
             // Extract coordinates (relative to origin)
-            long x = (Long) blockData.get("x");
-            long y = (Long) blockData.get("y");
-            long z = (Long) blockData.get("z");
+            long x = (Long) jsonBlockData.get("x");
+            long y = (Long) jsonBlockData.get("y");
+            long z = (Long) jsonBlockData.get("z");
 
             // Calculate absolute location
             Location blockLocation = origin.clone().add(x, y, z);
             Block block = blockLocation.getBlock();
 
             // Get material
-            String materialName = (String) blockData.get("material");
+            String materialName = (String) jsonBlockData.get("material");
             materialName = materialName.toUpperCase().replace("MINECRAFT:", "");
 
             try {
@@ -226,7 +226,7 @@ public class PythonBridge {
                 block.setType(material);
 
                 // Handle block properties (facing, powered, waterlogged, etc.)
-                JSONObject properties = (JSONObject) blockData.get("properties");
+                JSONObject properties = (JSONObject) jsonBlockData.get("properties");
                 if (properties != null && block.getBlockData() instanceof org.bukkit.block.data.BlockData) {
                     org.bukkit.block.data.BlockData blockData = block.getBlockData();
 

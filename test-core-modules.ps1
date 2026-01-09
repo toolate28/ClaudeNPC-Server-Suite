@@ -9,68 +9,68 @@ Write-Host ""
 
 $testResults = @()
 
-# Test Display.ps1
-Write-Host "Testing Display.ps1..." -ForegroundColor Yellow
+# Test Display.psm1
+Write-Host "Testing Display.psm1..." -ForegroundColor Yellow
 try {
-    . ".\setup\core\Display.ps1"
+    Import-Module ".\setup\core\Display.psm1" -Force
     Show-Banner
-    Write-Host "  ✓ Display.ps1 loaded successfully" -ForegroundColor Green
+    Write-Host "  ✓ Display.psm1 loaded successfully" -ForegroundColor Green
     Write-Host "  ✓ Show-Banner executed" -ForegroundColor Green
-    $testResults += @{Module = "Display.ps1"; Status = "PASS"}
+    $testResults += @{Module = "Display.psm1"; Status = "PASS"}
 } catch {
-    Write-Host "  ✗ Display.ps1 failed: $($_.Exception.Message)" -ForegroundColor Red
-    $testResults += @{Module = "Display.ps1"; Status = "FAIL"; Error = $_.Exception.Message}
+    Write-Host "  ✗ Display.psm1 failed: $($_.Exception.Message)" -ForegroundColor Red
+    $testResults += @{Module = "Display.psm1"; Status = "FAIL"; Error = $_.Exception.Message}
 }
 
 Write-Host ""
 
-# Test Logger.ps1
-Write-Host "Testing Logger.ps1..." -ForegroundColor Yellow
+# Test Logger.psm1
+Write-Host "Testing Logger.psm1..." -ForegroundColor Yellow
 try {
-    . ".\setup\core\Logger.ps1"
+    Import-Module ".\setup\core\Logger.psm1" -Force
     $logFile = Initialize-Logger -LogPath ".\test-logs"
     Write-Log -Message "Test log entry" -Level "INFO"
-    Write-Host "  ✓ Logger.ps1 loaded successfully" -ForegroundColor Green
+    Write-Host "  ✓ Logger.psm1 loaded successfully" -ForegroundColor Green
     Write-Host "  ✓ Initialize-Logger executed" -ForegroundColor Green
     Write-Host "  ✓ Write-Log executed" -ForegroundColor Green
     Write-Host "  ✓ Log file created: $logFile" -ForegroundColor Green
     Close-Logger -Success $true
-    $testResults += @{Module = "Logger.ps1"; Status = "PASS"}
+    $testResults += @{Module = "Logger.psm1"; Status = "PASS"}
 } catch {
-    Write-Host "  ✗ Logger.ps1 failed: $($_.Exception.Message)" -ForegroundColor Red
-    $testResults += @{Module = "Logger.ps1"; Status = "FAIL"; Error = $_.Exception.Message}
+    Write-Host "  ✗ Logger.psm1 failed: $($_.Exception.Message)" -ForegroundColor Red
+    $testResults += @{Module = "Logger.psm1"; Status = "FAIL"; Error = $_.Exception.Message}
 }
 
 Write-Host ""
 
-# Test Safety.ps1
-Write-Host "Testing Safety.ps1..." -ForegroundColor Yellow
+# Test Safety.psm1
+Write-Host "Testing Safety.psm1..." -ForegroundColor Yellow
 try {
-    . ".\setup\core\Safety.ps1"
+    Import-Module ".\setup\core\Safety.psm1" -Force
     $disk = Test-DiskSpace -Path "C:\" -RequiredGB 1
-    Write-Host "  ✓ Safety.ps1 loaded successfully" -ForegroundColor Green
+    Write-Host "  ✓ Safety.psm1 loaded successfully" -ForegroundColor Green
     Write-Host "  ✓ Test-DiskSpace executed" -ForegroundColor Green
     Write-Host "  ✓ Disk check result: $($disk.FreeSpaceGB) GB free" -ForegroundColor Green
-    $testResults += @{Module = "Safety.ps1"; Status = "PASS"}
+    $testResults += @{Module = "Safety.psm1"; Status = "PASS"}
 } catch {
-    Write-Host "  ✗ Safety.ps1 failed: $($_.Exception.Message)" -ForegroundColor Red
-    $testResults += @{Module = "Safety.ps1"; Status = "FAIL"; Error = $_.Exception.Message}
+    Write-Host "  ✗ Safety.psm1 failed: $($_.Exception.Message)" -ForegroundColor Red
+    $testResults += @{Module = "Safety.psm1"; Status = "FAIL"; Error = $_.Exception.Message}
 }
 
 Write-Host ""
 
-# Test Config.ps1
-Write-Host "Testing Config.ps1..." -ForegroundColor Yellow
+# Test Config.psm1
+Write-Host "Testing Config.psm1..." -ForegroundColor Yellow
 try {
-    . ".\setup\core\Config.ps1"
+    Import-Module ".\setup\core\Config.psm1" -Force
     $config = Get-DefaultConfiguration
-    Write-Host "  ✓ Config.ps1 loaded successfully" -ForegroundColor Green
+    Write-Host "  ✓ Config.psm1 loaded successfully" -ForegroundColor Green
     Write-Host "  ✓ Get-DefaultConfiguration executed" -ForegroundColor Green
     Write-Host "  ✓ Default config has $($config.Keys.Count) settings" -ForegroundColor Green
-    $testResults += @{Module = "Config.ps1"; Status = "PASS"}
+    $testResults += @{Module = "Config.psm1"; Status = "PASS"}
 } catch {
-    Write-Host "  ✗ Config.ps1 failed: $($_.Exception.Message)" -ForegroundColor Red
-    $testResults += @{Module = "Config.ps1"; Status = "FAIL"; Error = $_.Exception.Message}
+    Write-Host "  ✗ Config.psm1 failed: $($_.Exception.Message)" -ForegroundColor Red
+    $testResults += @{Module = "Config.psm1"; Status = "FAIL"; Error = $_.Exception.Message}
 }
 
 Write-Host ""

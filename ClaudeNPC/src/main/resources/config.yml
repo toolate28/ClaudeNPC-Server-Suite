@@ -5,14 +5,14 @@
 claude:
   # Your Claude API key from https://console.anthropic.com/
   # REQUIRED: Plugin will not work without this
-  api-key: ""
+  api-key: "YOUR_API_KEY_HERE"
 
   # Claude model to use
   # Options: claude-3-5-sonnet-20241022, claude-3-5-haiku-20241022, claude-opus-4-5-20251101
-  model: "claude-3-5-haiku-20241022"
+  model: "claude-opus-4-5-20251101"
 
   # Maximum tokens for response
-  max-tokens: 1024
+  max-tokens: 10024
 
   # API request timeout (seconds)
   timeout: 30
@@ -24,8 +24,7 @@ npc:
 
   # How long to keep conversation in memory (minutes)
   # Set to 0 to keep forever (until server restart)
-  memory-timeout: 30
-
+  memory-timeout: 0
   # Default NPC personality (can be overridden per-NPC)
   default-personality: |
     You are a helpful NPC in a Minecraft server.
@@ -47,7 +46,7 @@ performance:
 # Debug Settings
 debug:
   # Enable verbose logging
-  enabled: false
+  enabled: true
 
   # Log API requests/responses
-  log-api-calls: false
+  log-api-calls: true

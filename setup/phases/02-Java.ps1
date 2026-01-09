@@ -51,15 +51,49 @@ function Invoke-JavaInstallation {
             Select-Object -First 1
 
         if (-not $javaZip) {
-            Write-StatusBox -Title "Java Installer" -Status "Not found in Downloads" -Type "Error"
+            # Try winget installation
+            Write-StatusBox -Title "Java Installer" -Status "Trying winget..." -Type "Progress"
+
+            $wingetAvailable = Get-Command winget -ErrorAction SilentlyContinue
+            if ($wingetAvailable) {
+                Write-Host ""
+                Write-Host "  Installing Java 21 via winget..." -ForegroundColor Cyan
+                Write-Host ""
+
+                try {
+                    $installResult = & winget install Microsoft.OpenJDK.21 --accept-source-agreements --accept-package-agreements 2>&1
+
+                    # Refresh PATH for current session
+                    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+
+                    # Verify installation
+                    Start-Sleep -Seconds 2
+                    $javaCheck = & java -version 2>&1 | Select-Object -First 1
+                    if ($javaCheck -match "21") {
+                        Write-StatusBox -Title "Java 21" -Status "Installed via winget" -Type "Success"
+                        Write-Log -Message "Java 21 installed via winget" -Level "SUCCESS"
+                        return @{
+                            Success = $true
+                            Message = "Java installed via winget"
+                            Data = @{JavaVersion = $javaCheck; Method = "winget"}
+                        }
+                    }
+                } catch {
+                    Write-Log -Message "Winget installation failed: $_" -Level "WARNING"
+                }
+            }
+
+            Write-StatusBox -Title "Java Installer" -Status "Manual download required" -Type "Warning"
             Write-Host ""
             Write-Host "  Please download OpenJDK from:" -ForegroundColor Yellow
-            Write-Host "  https://jdk.java.net/25/" -ForegroundColor White
+            Write-Host "  https://adoptium.net/temurin/releases/?version=21" -ForegroundColor White
+            Write-Host ""
+            Write-Host "  Or run: winget install Microsoft.OpenJDK.21" -ForegroundColor Cyan
             Write-Host ""
 
             return @{
                 Success = $false
-                Message = "Java installer not found"
+                Message = "Java installer not found - run: winget install Microsoft.OpenJDK.21"
                 Data = @{}
             }
         }

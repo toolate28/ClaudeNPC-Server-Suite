@@ -7,13 +7,20 @@ Import-Module "$scriptRoot\core\Display.psd1" -Force -Global
 Import-Module "$scriptRoot\core\Logger.psd1" -Force -Global
 Import-Module "$scriptRoot\core\Config.psd1" -Force -Global
 
-# Plugin download URLs - Updated 2025-12-09
+# Plugin download URLs - Updated 2026-01-09
 $script:PluginUrls = @{
+    # Core plugins
     "Citizens" = "https://ci.citizensnpcs.co/job/Citizens2/lastSuccessfulBuild/artifact/dist/target/Citizens.jar"
     "Vault" = "https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar"
     "LuckPerms" = "https://download.luckperms.net/1563/bukkit/loader/LuckPerms-Bukkit-5.4.148.jar"
     "CoreProtect" = "https://github.com/PlayPro/CoreProtect/releases/download/23.0/CoreProtect-23.0.jar"
     "PlaceholderAPI" = "https://github.com/PlaceholderAPI/PlaceholderAPI/releases/download/2.11.7/PlaceholderAPI-2.11.7.jar"
+    # Full profile plugins
+    "WorldEdit" = "https://mediafilez.forgecdn.net/files/5821/785/worldedit-bukkit-7.3.10.jar"
+    "WorldGuard" = "https://mediafilez.forgecdn.net/files/5821/788/worldguard-bukkit-7.0.13.jar"
+    "EssentialsX" = "https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsX-2.20.1.jar"
+    "Spark" = "https://ci.lucko.me/job/spark/465/artifact/spark-bukkit/build/libs/spark-1.10.119-bukkit.jar"
+    "GriefPrevention" = "https://github.com/TechFortress/GriefPrevention/releases/download/16.18.4/GriefPrevention.jar"
 }
 
 function Download-Plugin {
@@ -83,7 +90,25 @@ function Invoke-PluginInstallation {
         $downloaded = @()
         $failed = @()
 
+        # Special handling for ClaudeNPC - copy from build
+        $repoRoot = Split-Path (Split-Path $scriptRoot -Parent) -Parent
+        $claudeNPCJar = Join-Path $repoRoot "ClaudeNPC\target\ClaudeNPC.jar"
+
+        if (Test-Path $claudeNPCJar) {
+            Write-StatusBox -Title "ClaudeNPC" -Status "Installing from build..." -Type "Progress"
+            $destClaudeNPC = Join-Path $pluginsPath "ClaudeNPC.jar"
+            Copy-Item $claudeNPCJar $destClaudeNPC -Force
+            Write-StatusBox -Title "ClaudeNPC" -Status "Installed (v2.1.0)" -Type "Success"
+            Write-Log -Message "ClaudeNPC plugin installed from local build" -Level "SUCCESS"
+            $installed += "ClaudeNPC"
+        } else {
+            Write-StatusBox -Title "ClaudeNPC" -Status "Build not found - run: mvn package in ClaudeNPC/" -Type "Warning"
+            Write-Log -Message "ClaudeNPC JAR not found at: $claudeNPCJar" -Level "WARNING"
+        }
+
         foreach ($plugin in $profile.Plugins) {
+            # Skip ClaudeNPC if in profile - we handled it specially above
+            if ($plugin -eq "ClaudeNPC") { continue }
             Write-StatusBox -Title "Installing $plugin" -Status "Checking..." -Type "Progress"
 
             # First, check if already installed

@@ -4,7 +4,13 @@ param(
     [string]$ServerPath,
 
     [Parameter(Mandatory=$false)]
-    [int]$IntervalSeconds = 60
+    [int]$IntervalSeconds = 60,
+
+    [Parameter(Mandatory=$false)]
+    [string]$ApiBaseUrl = "http://localhost:8080",
+
+    [Parameter(Mandatory=$false)]
+    [string]$ApiAuthToken = ""
 )
 
 $moduleBase = Split-Path $PSScriptRoot -Parent
@@ -97,6 +103,111 @@ while ($true) {
             }
         }
     }
+
+    # === API Signals (Dynamic) ================================================
+    $headers = @{}
+    if ($ApiAuthToken) { $headers["Authorization"] = "Bearer $ApiAuthToken" }
+
+    $apiHealthy = $false
+
+    # 1) Primary health signal
+    try {
+        $sw = [System.Diagnostics.Stopwatch]::StartNew()
+        $resp = Invoke-WebRequest -Uri "$ApiBaseUrl/api/health" -Headers $headers `
+                                  -UseBasicParsing -TimeoutSec 5
+        $sw.Stop()
+
+        $apiHealthy = ($resp.StatusCode -ge 200 -and $resp.StatusCode -lt 300)
+
+        $status += @{
+            Check   = "Ops API Health"
+            Status  = if ($apiHealthy) { "✓ Healthy" } else { "⚠ Degraded" }
+            Details = "HTTP $($resp.StatusCode) in $([math]::Round($sw.ElapsedMilliseconds)) ms"
+        }
+    } catch {
+        $status += @{
+            Check   = "Ops API Health"
+            Status  = "✗ Unreachable"
+            Details = $_.Exception.Message
+        }
+    }
+
+    # 2) Dynamic sub-checks – only when core health is OK
+    if ($apiHealthy) {
+        $apiChecks = @(
+            @{
+                Name   = "Wave Analyze"
+                Method = "POST"
+                Path   = "/api/wave/analyze"
+                Body   = @{ text = "dashboard_probe"; mode = "ping" }
+            },
+            @{
+                Name   = "BUMP Marker"
+                Method = "POST"
+                Path   = "/api/bump/create"
+                Body   = @{ type = "dashboard_probe"; source = "monitor" }
+            },
+            @{
+                Name   = "AWI Grant"
+                Method = "POST"
+                Path   = "/api/awi/request"
+                Body   = @{ subject = "dashboard"; intent = "status-check" }
+            },
+            @{
+                Name   = "ATOM Session"
+                Method = "POST"
+                Path   = "/api/atom/create"
+                Body   = @{ id = "dashboard"; molecule = "status"; compound = "probe" }
+            },
+            @{
+                Name   = "Context Storage"
+                Method = "POST"
+                Path   = "/api/context/store"
+                Body   = @{ id = "dashboard-context"; domain = "ops-monitor" }
+            }
+        )
+
+        foreach ($check in $apiChecks) {
+            try {
+                $sw2  = [System.Diagnostics.Stopwatch]::StartNew()
+                $body = $null
+                if ($check.Body) {
+                    $body = $check.Body | ConvertTo-Json -Depth 5
+                }
+
+                $resp2 = Invoke-WebRequest `
+                    -Uri    ($ApiBaseUrl + $check.Path) `
+                    -Headers $headers `
+                    -Method  $check.Method `
+                    -ContentType "application/json" `
+                    -Body   $body `
+                    -UseBasicParsing `
+                    -TimeoutSec 5
+
+                $sw2.Stop()
+
+                $status += @{
+                    Check   = $check.Name
+                    Status  = "✓ OK"
+                    Details = "HTTP $($resp2.StatusCode) in $([math]::Round($sw2.ElapsedMilliseconds)) ms"
+                }
+            } catch {
+                $status += @{
+                    Check   = $check.Name
+                    Status  = "⚠ Skipped/Failed"
+                    Details = $_.Exception.Message
+                }
+            }
+        }
+    } else {
+        # When core health isn’t OK, just record that deeper probes are inappropriate now
+        $status += @{
+            Check   = "API Deep Probes"
+            Status  = "⚠ Skipped"
+            Details = "Health not OK; deeper checks suppressed this cycle"
+        }
+    }
+    # ========================================================================
 
     Write-ResultsTable -Data $status -Headers @("Check", "Status", "Details")
 

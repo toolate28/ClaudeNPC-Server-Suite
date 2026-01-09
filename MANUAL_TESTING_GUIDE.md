@@ -1,10 +1,9 @@
-# ClaudeNPC Manual Testing Guide
-
-**Version:** 1.0.0
-**Date:** 2026-01-05
-**Status:** Ready for Testing
-
 ---
+version: 1.0.0
+Date: 2026-01-05
+Status: Ready for Testing
+---
+# ClaudeNPC Manual Testing Guide
 
 ## Quick Start (15 minutes to first NPC conversation)
 
@@ -81,7 +80,7 @@ cd C:\Users\iamto\repos\ClaudeNPC-Server-Suite\modular-setup
 
 1. Copy the built plugin:
    ```powershell
-   copy C:\Users\iamto\repos\ClaudeNPC-Server-Suite\ClaudeNPC\target\ClaudeNPC.jar plugins\
+   copy C:\repos\ClaudeNPC-Server-Suite\ClaudeNPC\target\ClaudeNPC.jar plugins\
    ```
 
 2. Configure API key:

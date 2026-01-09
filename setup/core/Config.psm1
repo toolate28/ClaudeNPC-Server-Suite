@@ -5,6 +5,7 @@
 #region Configuration Schema
 
 $script:DefaultConfig = @{
+    # Server Settings
     ServerPath = "C:\MinecraftServer"
     ServerPort = 25565
     MaxPlayers = 20
@@ -17,9 +18,71 @@ $script:DefaultConfig = @{
     MemoryMin = "4G"
     MemoryMax = "8G"
     InstallProfile = "Standard"
-    ClaudeAPIKey = ""
     AutoBackup = $true
     AcceptEULA = $false
+
+    # AI Provider Configuration
+    AIProvider = "claude"  # claude, openai, grok, gemini, deepmind, ollama
+    AIProviders = @{
+        claude = @{
+            Name = "Anthropic Claude"
+            APIKey = ""
+            Model = "claude-sonnet-4-20250514"
+            BaseURL = "https://api.anthropic.com"
+            MaxTokens = 300
+        }
+        openai = @{
+            Name = "OpenAI GPT"
+            APIKey = ""
+            Model = "gpt-4o"
+            BaseURL = "https://api.openai.com/v1"
+            MaxTokens = 300
+        }
+        grok = @{
+            Name = "xAI Grok"
+            APIKey = ""
+            Model = "grok-2"
+            BaseURL = "https://api.x.ai/v1"
+            MaxTokens = 300
+        }
+        gemini = @{
+            Name = "Google Gemini"
+            APIKey = ""
+            Model = "gemini-2.0-flash"
+            BaseURL = "https://generativelanguage.googleapis.com/v1beta"
+            MaxTokens = 300
+        }
+        deepmind = @{
+            Name = "Google DeepMind"
+            APIKey = ""
+            Model = "gemini-2.0-flash-thinking"
+            BaseURL = "https://generativelanguage.googleapis.com/v1beta"
+            MaxTokens = 300
+        }
+        sima = @{
+            Name = "DeepMind SIMA (Gaming AI)"
+            APIKey = ""
+            Model = "sima-2"
+            BaseURL = "https://generativelanguage.googleapis.com/v1beta"
+            MaxTokens = 300
+            Note = "Scalable Instructable Multiworld Agent - optimized for games"
+        }
+        ollama = @{
+            Name = "Ollama (Local)"
+            APIKey = ""
+            Model = "llama3.2"
+            BaseURL = "http://localhost:11434"
+            MaxTokens = 300
+        }
+        custom = @{
+            Name = "Custom Provider"
+            APIKey = ""
+            Model = ""
+            BaseURL = ""
+            MaxTokens = 300
+            Headers = @{}
+        }
+    }
 }
 
 #endregion
@@ -190,28 +253,63 @@ function Get-InstallProfile {
     #>
     param(
         [Parameter(Mandatory=$true)]
-        [ValidateSet("Minimal", "Standard", "Full")]
+        [ValidateSet("Minimal", "Standard", "Full", "Creative", "Quantum")]
         [string]$ProfileName
     )
     
     $profiles = @{
         Minimal = @{
             Name = "Minimal"
-            Description = "ClaudeNPC + Citizens only"
+            Description = "HOPE + Citizens only - for testing"
             Plugins = @("Citizens")
+            DataPacks = @()
+            ResourcePacks = @()
         }
         Standard = @{
             Name = "Standard"
-            Description = "Core plugins + security + ClaudeNPC"
+            Description = "Core plugins + security + HOPE NPCs"
             Plugins = @("Citizens", "Vault", "LuckPerms", "CoreProtect", "PlaceholderAPI")
+            DataPacks = @("vanilla-tweaks-crafting", "vanilla-tweaks-survival")
+            ResourcePacks = @()
         }
         Full = @{
             Name = "Full"
-            Description = "Complete server suite with all features"
+            Description = "Complete server suite - production ready"
             Plugins = @(
+                # Core
                 "Citizens", "Vault", "LuckPerms", "CoreProtect", "PlaceholderAPI",
-                "WorldEdit", "WorldGuard", "EssentialsX", "Spark", "GriefPrevention"
+                # World Management
+                "WorldEdit", "WorldGuard", "Multiverse-Core", "Chunky",
+                # QoL
+                "EssentialsX", "EssentialsXChat", "EssentialsXSpawn",
+                # Performance
+                "Spark", "ViewDistanceTweaks",
+                # Protection
+                "GriefPrevention"
             )
+            DataPacks = @("vanilla-tweaks-crafting", "vanilla-tweaks-survival", "vanilla-tweaks-hermitcraft")
+            ResourcePacks = @("faithful-32x", "stay-true")
+        }
+        Creative = @{
+            Name = "Creative"
+            Description = "Building-focused with WorldEdit tools"
+            Plugins = @(
+                "Citizens", "WorldEdit", "WorldGuard", "FAWE", "VoxelSniper",
+                "Multiverse-Core", "Multiverse-Portals", "HeadDatabase"
+            )
+            DataPacks = @("vanilla-tweaks-crafting", "more-mob-heads")
+            ResourcePacks = @("faithful-32x")
+        }
+        Quantum = @{
+            Name = "Quantum"
+            Description = "HOPE + SpiralSafe + Redstone circuits - experimental"
+            Plugins = @(
+                "Citizens", "Vault", "LuckPerms", "WorldEdit", "WorldGuard",
+                "RedstoneClockDetector", "Spark"
+            )
+            DataPacks = @("vanilla-tweaks-technical")
+            ResourcePacks = @()
+            Features = @("spiralsafe-integration", "quantum-redstone", "wave-analysis")
         }
     }
     

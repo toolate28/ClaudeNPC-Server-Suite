@@ -37,30 +37,39 @@ $script:Icons = @{
 function Show-Banner {
     <#
     .SYNOPSIS
-        Displays the ClaudeNPC branded banner
+        Displays the HOPE branded banner
     #>
     Clear-Host
-    $banner = @"
 
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║   ██████╗██╗      █████╗ ██╗   ██╗██████╗ ███████╗███╗   ██╗   ║
-║  ██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝████╗  ██║   ║
-║  ██║     ██║     ███████║██║   ██║██║  ██║█████╗  ██╔██╗ ██║   ║
-║  ██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══╝  ██║╚██╗██║   ║
-║  ╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝███████╗██║ ╚████║   ║
-║   ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ║
-║                                                                  ║
-║              N P C   S E R V E R   S U I T E                    ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
+    Write-Host ""
+    Write-Host "  ================================================================" -ForegroundColor DarkCyan
+    Write-Host "  ##                                                            ##" -ForegroundColor DarkCyan
+    Write-Host "  ##   ##  ##  #####  #####  #####                              ##" -ForegroundColor Cyan
+    Write-Host "  ##   ##  ## ##   ## ##  ## ##      " -ForegroundColor Cyan -NoNewline
+    Write-Host "NPCs" -ForegroundColor DarkMagenta -NoNewline
+    Write-Host "                   ##" -ForegroundColor DarkCyan
+    Write-Host "  ##   ###### ##   ## #####  ####                               ##" -ForegroundColor Magenta
+    Write-Host "  ##   ##  ## ##   ## ##     ##                                 ##" -ForegroundColor Magenta
+    Write-Host "  ##   ##  ##  #####  ##     #####                              ##" -ForegroundColor Magenta
+    Write-Host "  ##                                                            ##" -ForegroundColor DarkCyan
+    Write-Host "  ##   AI NPCs playing games to redefine reality                ##" -ForegroundColor White
+    Write-Host "  ##   Powered by Claude, GPT, Grok, Gemini & more              ##" -ForegroundColor DarkGray
+    Write-Host "  ##                                                            ##" -ForegroundColor DarkCyan
+    Write-Host "  ================================================================" -ForegroundColor DarkCyan
+    Write-Host ""
 
-"@
-    Write-Host $banner -ForegroundColor $script:Theme.Primary
-    Write-Host "  $($script:Icons.Robot) AI-Powered NPCs for Minecraft  " -ForegroundColor $script:Theme.Secondary -NoNewline
-    Write-Host "│ " -ForegroundColor $script:Theme.Info -NoNewline
-    Write-Host "v1.0.0" -ForegroundColor $script:Theme.Highlight
-    Write-Host "  Built with SAIF Methodology" -ForegroundColor $script:Theme.Accent
+    # Status line
+    Write-Host "  " -NoNewline
+    Write-Host "[" -ForegroundColor DarkGray -NoNewline
+    Write-Host "HOPE" -ForegroundColor Magenta -NoNewline
+    Write-Host "]" -ForegroundColor DarkGray -NoNewline
+    Write-Host " v2.1.0 " -ForegroundColor White -NoNewline
+    Write-Host "|" -ForegroundColor DarkGray -NoNewline
+    Write-Host " SpiralSafe " -ForegroundColor Cyan -NoNewline
+    Write-Host "|" -ForegroundColor DarkGray -NoNewline
+    Write-Host " H&&S " -ForegroundColor Yellow -NoNewline
+    Write-Host "|" -ForegroundColor DarkGray -NoNewline
+    Write-Host " MC 1.21.3 " -ForegroundColor Green
     Write-Host ""
 }
 
