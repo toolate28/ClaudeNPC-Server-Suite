@@ -1,5 +1,7 @@
 # HOPE NPCs Roadmap
 
+**Part of the [SpiralSafe Ecosystem](https://github.com/toolate28/SpiralSafe)**
+
 ## v2.1.0 - Current Release
 - Multi-AI provider support (8 providers)
 - HOPE branding
@@ -163,10 +165,26 @@ Player Biosignals (EEG/Wearables) → Neural Pattern Analysis → World Generati
 | Sentiment-adaptive NPCs | Grok (Twitter) | HIGH |
 | Voice chat | User request | MEDIUM |
 | Discord integration | User request | MEDIUM |
-| npm/pip packages | User request | LOW |
+| pip/npm provider packages | User request | IN PROGRESS |
+
+---
+
+## 📦 Upcoming Provider Packages
+
+AI provider plugins will be published as standalone packages:
+
+| Package | Provider | Install |
+|---------|----------|---------|
+| `spiralsafe-grok` | xAI/Grok | `pip install spiralsafe-grok` |
+| `spiralsafe-openai` | OpenAI/GPT | `npm i spiralsafe-openai` |
+| `spiralsafe-gemini` | Google/Gemini | `pip install spiralsafe-gemini` |
+| `spiralsafe-azure` | Azure OpenAI | `npm i spiralsafe-azure` |
+| `spiralsafe-ollama` | LLaMA/Ollama | `pip install spiralsafe-ollama` |
+
+Watch [SpiralSafe Releases](https://github.com/toolate28/SpiralSafe/releases) for announcements.
 
 ---
 
 **Contributing**: Open issues on GitHub or tag us on Twitter!
 
-**H&&S | SpiralSafe | HOPE**
+**H&&S | [SpiralSafe](https://github.com/toolate28/SpiralSafe) | HOPE**

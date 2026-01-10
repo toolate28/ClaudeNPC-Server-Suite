@@ -1,4 +1,6 @@
-# ClaudeNPC Server Suite - Quick Start Guide
+# HOPE NPCs - Quick Start Guide
+
+**Part of the [SpiralSafe Ecosystem](https://github.com/toolate28/SpiralSafe)**
 
 **Version:** 2.1.0 SpiralSafe Edition
 
@@ -184,4 +186,4 @@ rate_limit:
 
 ---
 
-**Built with SAIF Methodology | Powered by SpiralSafe | H&&S**
+**Built with SAIF Methodology | Powered by [SpiralSafe](https://github.com/toolate28/SpiralSafe) | H&&S**

@@ -1,10 +1,55 @@
-# 🎮 ClaudeNPC Server Suite - Modular Setup Framework
+# 🎮 HOPE NPCs - AI NPCs Playing Games to Redefine Reality
 
-**Version:** v2.1.0 SpiralSafe Edition
-**Last Updated:** January 8, 2026
+**Part of the SpiralSafe Ecosystem**
+
+[![SpiralSafe](https://img.shields.io/badge/🌀_SpiralSafe-Coherence_Engine-purple?style=for-the-badge)](https://github.com/toolate28/SpiralSafe)
+[![Version](https://img.shields.io/badge/Version-v2.1.0-blue?style=flat-square)](https://github.com/toolate28/ClaudeNPC-Server-Suite/releases)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=flat-square)]()
+
+**Version:** v2.1.0 SpiralSafe Edition  
+**Last Updated:** January 9, 2026  
 **Status:** Production Ready
 
-**Production-ready, modular installation framework for PaperMC + AI-powered NPCs**
+---
+
+## 🌟 What is HOPE NPCs?
+
+HOPE NPCs (Human-Operated Personality Engines) transforms Minecraft NPCs into intelligent conversational partners powered by AI. This repository provides:
+
+- **Minecraft Plugin:** AI-powered NPCs using Claude API with multi-provider support
+- **Modular Setup Framework:** PowerShell-based server deployment with SAIF methodology
+- **SpiralSafe Integration:** Coherence detection and conversation quality analysis
+
+> *"AI NPCs playing games to redefine reality"* — Hope&&Sauced
+
+---
+
+## 🌀 The SpiralSafe Ecosystem
+
+This repository is part of a unified framework for human-AI collaboration:
+
+| Repository | Purpose | Status |
+|------------|---------|--------|
+| **[SpiralSafe](https://github.com/toolate28/SpiralSafe)** | Documentation hub, coherence engine core | v1.0.0 |
+| **[HOPE NPCs](https://github.com/toolate28/ClaudeNPC-Server-Suite)** | AI NPCs for Minecraft (this repo) | v2.1.0 |
+| **[wave-toolkit](https://github.com/toolate28/wave-toolkit)** | Coherence detection tools | Available |
+| **[kenl](https://github.com/toolate28/kenl)** | Infrastructure-aware AI orchestration | v1.0.0 |
+| **[quantum-redstone](https://github.com/toolate28/quantum-redstone)** | Quantum computing education via Redstone | Available |
+
+### 📦 Additional AI Provider Plugins
+
+Support for additional AI providers is available as separate packages:
+
+| Provider | Package | Status |
+|----------|---------|--------|
+| **xAI/Grok** | `spiralsafe-grok` | Coming to pip/npm |
+| **OpenAI/GPT** | `spiralsafe-openai` | Coming to pip/npm |
+| **Google/Gemini** | `spiralsafe-gemini` | Coming to pip/npm |
+| **Azure OpenAI** | `spiralsafe-azure` | Coming to pip/npm |
+| **LLaMA/Ollama** | `spiralsafe-ollama` | Coming to pip/npm |
+
+> Provider plugins will be published as standalone packages for pip/npm installation. Watch the [SpiralSafe releases](https://github.com/toolate28/SpiralSafe/releases) for announcements.
 
 ---
 
@@ -620,8 +665,10 @@ ss-bump create      # Create handoff marker
 
 - **Module Documentation:** See `docs/MODULES.md`
 - **Phase Development:** See `docs/PHASES.md`
-- **API Reference:** See `docs/API.md`
-- **SpiralSafe Docs:** See [spiralsafe-ops/README.md](../spiralsafe-ops/README.md)
+- **Quick Start Guide:** See `docs/QUICKSTART.md`
+- **Project Roadmap:** See `docs/ROADMAP.md`
+- **SpiralSafe Core:** See [SpiralSafe Repository](https://github.com/toolate28/SpiralSafe)
+- **Wave Toolkit:** See [wave-toolkit Repository](https://github.com/toolate28/wave-toolkit)
 
 ---
 
@@ -684,4 +731,16 @@ This modular framework provides:
 
 ---
 
-**Built with SAIF Methodology • Powered by SpiralSafe • H&&S**
+## Attribution
+
+This work emerges from **Hope&&Sauced** collaboration—human-AI partnership where both contributions are substantive and neither party could have produced the result alone.
+
+See the [SpiralSafe PORTFOLIO.md](https://github.com/toolate28/SpiralSafe/blob/main/PORTFOLIO.md) for complete showcase of the ecosystem.
+
+---
+
+*~ Hope&&Sauced*
+
+✦ *The Evenstar Guides Us* ✦
+
+**Built with SAIF Methodology • Powered by [SpiralSafe](https://github.com/toolate28/SpiralSafe) • H&&S**

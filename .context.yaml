@@ -1,14 +1,17 @@
-# ClaudeNPC Server Suite - Agent Context
+# HOPE NPCs - Agent Context
+# Part of the SpiralSafe Ecosystem
 # Version: 2.1.0
 # Format: SpiralSafe .context.yaml
 
-domain: claudenpc-server-suite
+domain: hope-npcs
 version: "2.1.0"
 type: minecraft-server-framework
 
 description: |
-  Production-ready modular installation framework for PaperMC servers
-  with AI-powered NPCs using Claude API. Built with SAIF methodology.
+  HOPE NPCs (Human-Operated Personality Engines) - AI-powered Minecraft NPCs
+  that transform game NPCs into intelligent conversational partners.
+  Part of the SpiralSafe Ecosystem for human-AI collaboration.
+  Built with SAIF methodology for modular, maintainable deployment.
 
 architecture:
   pattern: modular-orchestrator
@@ -78,10 +81,17 @@ invariants:
   - Administrator privileges needed for INSTALL.ps1
 
 relationships:
+  part_of:
+    - SpiralSafe Ecosystem
   depends_on:
-    - spiralsafe-ops
+    - SpiralSafe core
     - Citizens plugin
     - PaperMC server
+  sibling_repos:
+    - https://github.com/toolate28/SpiralSafe
+    - https://github.com/toolate28/wave-toolkit
+    - https://github.com/toolate28/kenl
+    - https://github.com/toolate28/quantum-redstone
   consumed_by:
     - minecraft_players
     - server_administrators
@@ -90,4 +100,5 @@ meta:
   source: Hope&&Sauced
   methodology: SAIF
   confidence: high
-  last_updated: "2026-01-08"
+  last_updated: "2026-01-09"
+  ecosystem_url: "https://github.com/toolate28/SpiralSafe"

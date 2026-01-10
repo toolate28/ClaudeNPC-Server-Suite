@@ -1,9 +1,10 @@
 # Credits & Acknowledgments
 
-## SpiralSafe Ecosystem
+## HOPE NPCs - Part of the SpiralSafe Ecosystem
 
-**Created by:** Hope&&Sauced Collaborative
-**Date:** 2026-01-05
+**Created by:** Hope&&Sauced Collaborative  
+**Date:** 2026-01-05  
+**Ecosystem:** [SpiralSafe](https://github.com/toolate28/SpiralSafe)
 
 ---
 
@@ -123,8 +124,10 @@ ALPHA/OMEGA rails form base manifold, PHASE rail is fiber space, together consti
 
 All code available for explorers:
 
-- **SpiralSafe:** https://github.com/toolate28/SpiralSafe
-- **ClaudeNPC-Server-Suite:** https://github.com/toolate28/ClaudeNPC-Server-Suite
+- **SpiralSafe (Hub):** https://github.com/toolate28/SpiralSafe
+- **HOPE NPCs:** https://github.com/toolate28/ClaudeNPC-Server-Suite
+- **wave-toolkit:** https://github.com/toolate28/wave-toolkit
+- **kenl:** https://github.com/toolate28/kenl
 - **quantum-redstone:** https://github.com/toolate28/quantum-redstone
 
 Not actively promoted - but those who find it deserve to see it.
